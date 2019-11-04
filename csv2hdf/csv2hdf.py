@@ -14,6 +14,10 @@ def csv_to_hdfs(file_path, save):
    print(data)
    file = h5py.File(os.path.join(save,'output.h5'), 'w')
    col_to_save = data.columns.to_numpy()
+   id_arr = np.hstack(data.iloc[:,0].to_numpy()).astype('S32')
+   dset = file.create_dataset('ids', id_arr.shape, dtype="S32",
+            compression="gzip")
+   dset[...] = id_arr
    for k in col_to_save:
        coldata = data[k]
        if coldata.dtype == np.dtype('O'):
