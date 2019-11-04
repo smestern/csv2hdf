@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "csv2hdf", "csv2hdf\csv2hdf.pyproj", "{74A47937-0ABD-4793-8A47-9EA60B317BCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74A47937-0ABD-4793-8A47-9EA60B317BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74A47937-0ABD-4793-8A47-9EA60B317BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF1E141D-ED4B-4EAF-BC92-23E6F328E57C}
+	EndGlobalSection
+EndGlobal
