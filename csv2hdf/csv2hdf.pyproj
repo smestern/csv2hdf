@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>74a47937-0abd-4793-8a47-9ea60b317bcf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Run_Convert.py</StartupFile>
+    <StartupFile>Run_Convert_folder.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="csv2hdf.py" />
+    <Compile Include="Run_Convert_folder.py" />
     <Compile Include="Run_Convert.py">
       <SubType>Code</SubType>
     </Compile>

@@ -9,8 +9,8 @@ from tkinter import filedialog
 
 root = tk.Tk()
 root.withdraw()
-file_path = filedialog.askopenfilename()
+file_path = filedialog.askdirectory()
 save_path,_ = os.path.split(file_path)
-csv2hdf.csv_to_hdfs_group_col(file_path,1, save_path)
+csv2hdf.folder_csv_to_hdfs_group_col(file_path, save_path)
 
 print("conversion complete")

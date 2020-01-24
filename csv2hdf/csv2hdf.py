@@ -6,6 +6,24 @@ import re
 import tkinter as tk
 from tkinter import filedialog
 
+def folder_csv_to_hdfs_group_col(fold_path, save):
+ file = h5py.File(os.path.join(fold_path,'output.h5'), 'w')
+ for root, sub, files in os.walk(fold_path):
+    for f in files:
+        if '.csv' in f:
+            file_path = os.path.join(root,f)
+            data = np.genfromtxt(file_path, delimiter=',')
+            print(data)
+            
+            k1, _ = f.split('.', 1)   
+            dset = file.create_dataset(k1, data.shape, dtype=data.dtype,
+            compression="gzip")
+            dset[...] = data
+ id_arr = np.linspace(1, data.shape[0], data.shape[0])
+ dset = file.create_dataset('ids', id_arr.shape, dtype=id_arr.dtype,
+            compression="gzip")
+ dset[...] = id_arr   
+ file.close()  
 
 
 
@@ -42,8 +60,8 @@ def csv_to_hdfs_group_col(file_path, gcol, save):
                data_sorted[x].append(i)
    
    col_to_save = data.columns.to_numpy()
-   id_arr = np.hstack(col_to_sort).astype('S10')
-   dset = file.create_dataset('ids', id_arr.shape, dtype="S10",
+   id_arr = np.hstack(col_to_sort).astype('S32')
+   dset = file.create_dataset('ids', id_arr.shape, dtype="S32",
             compression="gzip")
    dset[...] = id_arr
    for i, k in enumerate(col_to_save):
